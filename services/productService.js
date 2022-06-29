@@ -12,7 +12,7 @@ const productService = {
   async checkIfExist(id) {
     const exist = await productModel.exists(id);
     if (!exist) {
-      throw new NotFoundError('Product not found')
+      throw new NotFoundError('Product not found');
     }
   },
 

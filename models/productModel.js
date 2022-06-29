@@ -17,7 +17,7 @@ const productModel = {
    },
   
   async list() {
-    const SQL = `SELECT * FROM StoreManager.products`;
+    const SQL = 'SELECT * FROM StoreManager.products';
     const [products] = await connection.execute(SQL);
     return products;
   },

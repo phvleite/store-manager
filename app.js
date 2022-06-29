@@ -3,7 +3,7 @@ require('express-async-errors');
 const productRoute = require('./routes/productRoute');
 
 const app = express();
-app.use(express.json())
+app.use(express.json());
 
 app.use('/products', productRoute);
 

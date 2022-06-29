@@ -12,7 +12,7 @@ const productController = {
   async list(_req, res) {
     const products = await productService.list();
     res.status(200).json(products);
-  }
+  },
 };
 
 module.exports = productController;
