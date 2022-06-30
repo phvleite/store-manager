@@ -9,14 +9,31 @@ const productService = {
     id: Joi.number().required().positive().integer(),
   })),
 
+  validateBodyCreate: runSchema(Joi.object({
+    name: Joi.string().required().max(30).min(5),
+  })),
+
   async checkIfExists(id) {
     const exists = await productModel.exists(id);
-    console.log(exists);
     if (!exists) {
       throw new NotFoundError('Product not found');
     }
 
     return true;
+  },
+
+  async checkIfExistsProduct(data) {
+    const exists = await productModel.existsProduct(data);
+    if (exists) {
+      throw new NotFoundError('Product already registered');
+    }
+
+    return false;
+  },
+
+  async create(data) {
+    const id = await productModel.create(data);
+    return id;
   },
 
   async getById(id) {

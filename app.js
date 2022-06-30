@@ -13,7 +13,12 @@ app.get('/', (_request, response) => {
 });
 
 app.use((err, _req, res, _next) => {
-  const { name, message } = err;
+  const { name, message, type } = err;
+  
+  if (type && type === 'string.min') {
+    return res.status(422).json({ message });
+  }
+
   switch (name) {
     case 'ValidationError': res.status(400).json({ message }); break;
     case 'NotFoundError': res.status(404).json({ message }); break;

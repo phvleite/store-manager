@@ -13,6 +13,13 @@ const productController = {
     const products = await productService.list();
     res.status(200).json(products);
   },
+
+  async create(req, res) {
+    const data = await productService.validateBodyCreate(req.body);
+    await productService.checkIfExistsProduct(data);
+    const id = await productService.create(data);
+    res.status(201).json({ id, name: data.name });
+  },
 };
 
 module.exports = productController;

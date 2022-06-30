@@ -26,5 +26,38 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "b16ae651-20dd-438f-ad6c-5c454d63656f",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products",
+    "url": "localhost:3000/products",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-06-30T05:21:55.169Z",
+    "modified": "2022-06-30T05:22:05.915Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "0c076eb0-2fac-4a3b-be83-14fb7180000e",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products",
+    "url": "localhost:3000/products",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-06-30T05:22:25.098Z",
+    "modified": "2022-06-30T06:09:03.850Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"name\": \"Ja\"\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
