@@ -41,6 +41,10 @@ const productService = {
     return true;
   },
 
+  async remove(id) {
+    await productModel.remove(id);
+  },
+
   async create(data) {
     const id = await productModel.create(data);
     return id;

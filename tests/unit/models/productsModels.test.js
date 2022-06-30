@@ -30,8 +30,8 @@ describe('ProductModel', function () {
     });
 
     it('ao mandar um nome de produto que não existe deve retorna "false"', async () => {
-      sinon.stub(connection, 'query').resolves([[{ name: 'Laço da Mulher Maravilha' }]]);
-      const existsProduct = await productModel.existsProduct({ name: 'Laço da Mulher Maravilha' });
+      sinon.stub(connection, 'query').resolves([[{ name: 'Pano de prato da Mulher Maravilha' }]]);
+      const existsProduct = await productModel.existsProduct({ name: 'Pano de prato da Mulher Maravilha' });
       expect(existsProduct).to.be.equal(false);
     });
   });

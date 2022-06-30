@@ -36,7 +36,7 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2022-06-30T05:21:55.169Z",
-    "modified": "2022-06-30T17:49:11.171Z",
+    "modified": "2022-06-30T19:43:37.501Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -86,10 +86,10 @@
     "containerId": "",
     "name": "localhost:3000/products",
     "url": "localhost:3000/products/",
-    "method": "GET",
+    "method": "POST",
     "sortNum": 0,
     "created": "2022-06-30T17:49:54.471Z",
-    "modified": "2022-06-30T18:24:20.885Z",
+    "modified": "2022-06-30T19:20:10.499Z",
     "headers": [],
     "params": [],
     "body": {
@@ -97,6 +97,76 @@
       "raw": "{\n    \"name\": \"Laço da Mulher-Maravilha\"\n}",
       "form": []
     },
+    "tests": []
+  },
+  {
+    "_id": "981db675-c237-4874-a5ae-1e5c7e8f1286",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products/4",
+    "url": "localhost:3000/products/4",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-06-30T19:43:43.163Z",
+    "modified": "2022-06-30T19:44:06.028Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "8312b4bf-a065-45d1-b9e4-74a5aba5854e",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products/44",
+    "url": "localhost:3000/products/44",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-06-30T19:43:49.234Z",
+    "modified": "2022-06-30T19:43:49.289Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "2f577c74-8a29-43a2-ad0c-6d60d07f7586",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products/44",
+    "url": "localhost:3000/products/44",
+    "method": "DELETE",
+    "sortNum": 0,
+    "created": "2022-06-30T19:43:54.467Z",
+    "modified": "2022-06-30T19:43:54.519Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "cfbc9761-b8cd-4775-a039-0ab8e77ebfc4",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products/4",
+    "url": "localhost:3000/products/4",
+    "method": "DELETE",
+    "sortNum": 0,
+    "created": "2022-06-30T19:44:00.081Z",
+    "modified": "2022-06-30T19:44:00.128Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "e7739ad8-ac25-43fb-ad8d-8691178d28f7",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products/",
+    "url": "localhost:3000/products/",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-06-30T19:44:09.081Z",
+    "modified": "2022-06-30T19:44:09.130Z",
+    "headers": [],
+    "params": [],
     "tests": []
   }
 ]

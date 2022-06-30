@@ -15,7 +15,6 @@ app.get('/', (_request, response) => {
 app.use((err, _req, res, _next) => {
   const { name, message, type, code } = err;
   
-  console.log(code);
   if (type && type === 'string.min') {
     return res.status(422).json({ message });
   }

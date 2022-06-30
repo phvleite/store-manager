@@ -9,6 +9,13 @@ const productController = {
     res.status(200).json(product);
   },
   
+  async remove(req, res) {
+    const { id } = await productService.validateParamsId(req.params);
+    await productService.checkIfExists(id);
+    productService.remove(id);
+    res.sendStatus(204);
+  },
+
   async list(_req, res) {
     const products = await productService.list();
     res.status(200).json(products);

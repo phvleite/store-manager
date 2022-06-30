@@ -15,7 +15,14 @@ const productModel = {
     const [[exists]] = await connection.execute(SQL);
     return !!exists;
   },
-  
+
+  async remove(id) {
+    const SQL = `DELETE FROM StoreManager.products
+      WHERE id = ?;
+    `;
+    await connection.execute(SQL, [id]);
+  },
+
   async create(data) {
     const SQL = `INSERT INTO StoreManager.products (name)
       VALUES (?);
