@@ -36,7 +36,7 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2022-06-30T05:21:55.169Z",
-    "modified": "2022-06-30T12:23:25.939Z",
+    "modified": "2022-06-30T17:49:11.171Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -50,12 +50,51 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-06-30T05:22:25.098Z",
-    "modified": "2022-06-30T12:56:42.383Z",
+    "modified": "2022-06-30T17:20:38.121Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n    \"name\": \"1234567890123456789012345678901234567890\"\n}",
+      "raw": "{\n    \"name\": \"Traje de encolhimento\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "7b0a0c57-7497-4417-9102-8c4c7e52df18",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products?{}",
+    "url": "localhost:3000/products?{}",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-06-30T17:49:26.438Z",
+    "modified": "2022-06-30T17:49:26.483Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "{}",
+        "value": "",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "cf957227-29e1-4174-813e-0bd4666330cc",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products",
+    "url": "localhost:3000/products/",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-06-30T17:49:54.471Z",
+    "modified": "2022-06-30T18:24:20.885Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"name\": \"Laço da Mulher-Maravilha\"\n}",
       "form": []
     },
     "tests": []

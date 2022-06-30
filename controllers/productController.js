@@ -20,6 +20,15 @@ const productController = {
     const id = await productService.create(data);
     res.status(201).json({ id, name: data.name });
   },
+
+  async edit(req, res) {
+    const { id } = await productService.validateParamsId(req.params);
+    const changes = await productService.validateBodyCreate(req.body);
+    await productService.checkIfExists(id);
+    await productService.edit(id, changes);
+    res.status(200).json({ id, name: changes.name });
+  },
+
 };
 
 module.exports = productController;

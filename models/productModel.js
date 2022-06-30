@@ -24,6 +24,16 @@ const productModel = {
     return insertId;
   },
 
+  async edit(id, changes) {
+    console.log(changes);
+    // const SQL = 'UPDATE StoreManager.products SET ? WHERE id = ?;';
+    const SQL = `UPDATE StoreManager.products
+      SET ${Object.keys(changes)} = '${Object.values(changes)}'
+      WHERE id = ${id};`;
+    const [{ affectedRows }] = await connection.execute(SQL);
+    return Boolean(affectedRows);
+  },
+
   async getById(id) {
     const SQL = `SELECT * FROM StoreManager.products
       WHERE products.id = ?`;

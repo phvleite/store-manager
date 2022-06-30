@@ -16,7 +16,8 @@ const productService = {
   async checkIfExists(id) {
     const exists = await productModel.exists(id);
     if (!exists) {
-      throw new NotFoundError('Product not found');
+      const message = 'Product not found';
+      throw new NotFoundError(message);
     }
 
     return true;
@@ -25,10 +26,19 @@ const productService = {
   async checkIfExistsProduct(data) {
     const exists = await productModel.existsProduct(data);
     if (exists) {
-      throw new NotFoundError('Product already registered');
+      const message = 'Product already registered';
+      throw new NotFoundError(message);
     }
 
     return false;
+  },
+
+  async edit(id, changes) {
+    if (!Object.keys(changes).length) return false;
+
+    await productModel.edit(id, changes);
+
+    return true;
   },
 
   async create(data) {
