@@ -9,11 +9,14 @@ const productService = {
     id: Joi.number().required().positive().integer(),
   })),
 
-  async checkIfExist(id) {
-    const exist = await productModel.exists(id);
-    if (!exist) {
+  async checkIfExists(id) {
+    const exists = await productModel.exists(id);
+    console.log(exists);
+    if (!exists) {
       throw new NotFoundError('Product not found');
     }
+
+    return true;
   },
 
   async getById(id) {
