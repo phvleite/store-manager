@@ -21,4 +21,18 @@ describe('ProductModel', function () {
       expect(exists).to.be.equal(false);
     });
   });
+
+  describe('#existsProduct', function () {
+    it('ao mandar um nome de produto que existe deve retorna "true"', async () => {
+      sinon.stub(connection, 'query').resolves([[{ name: 'Martelo de Thor' }]]);
+      const existsProduct = await productModel.existsProduct({ name: 'Martelo de Thor' });
+      expect(existsProduct).to.be.equal(true);
+    });
+
+    it('ao mandar um nome de produto que não existe deve retorna "false"', async () => {
+      sinon.stub(connection, 'query').resolves([[{ name: 'Laço da Mulher Maravilha' }]]);
+      const existsProduct = await productModel.existsProduct({ name: 'Laço da Mulher Maravilha' });
+      expect(existsProduct).to.be.equal(false);
+    });
+  });
 });

@@ -32,9 +32,23 @@ describe('ProductService', () => {
       expect(exists).to.be.eq(true);
     });
 
-    it('ao mandar um id não existe deve retorna "false"', () => {
+    it('ao mandar um id que não existe deve retorna "false"', () => {
       sinon.stub(productModel, 'exists').resolves(false);
       expect(productService.checkIfExists(1001)).to.be
+        .rejectedWith(NotFoundError);
+    });
+  });
+
+  describe('#checkIfExistsProduct', () => {
+    it('ao mandar um nome de produto que não existe deve retorna "false"', async () => {
+      sinon.stub(productModel, 'existsProduct').resolves(false);
+      const existsProduct = await productService.checkIfExistsProduct({ name: 'Laço da Mulher Maravilha' });
+      expect(existsProduct).to.be.eq(false);
+    });
+
+    it('ao mandar um nome de produto que existe deve retorna "true"', () => {
+      sinon.stub(productModel, 'existsProduct').resolves(true);
+      expect(productService.checkIfExistsProduct({ name: 'Martelo de Thor' })).to.be
         .rejectedWith(NotFoundError);
     });
   });
