@@ -36,7 +36,7 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2022-06-30T05:21:55.169Z",
-    "modified": "2022-06-30T19:43:37.501Z",
+    "modified": "2022-07-01T23:03:55.630Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -89,12 +89,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-06-30T17:49:54.471Z",
-    "modified": "2022-06-30T19:20:10.499Z",
+    "modified": "2022-07-02T22:28:25.088Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n    \"name\": \"Laço da Mulher-Maravilha\"\n}",
+      "raw": "{\n    \n}",
       "form": []
     },
     "tests": []
@@ -104,13 +104,18 @@
     "colId": "history",
     "containerId": "",
     "name": "localhost:3000/products/4",
-    "url": "localhost:3000/products/4",
+    "url": "localhost:3000/products/3",
     "method": "GET",
     "sortNum": 0,
     "created": "2022-06-30T19:43:43.163Z",
-    "modified": "2022-06-30T19:44:06.028Z",
+    "modified": "2022-07-02T01:14:35.358Z",
     "headers": [],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"name\": \"Cueca do Homem-Aranha\"\n}",
+      "form": []
+    },
     "tests": []
   },
   {
@@ -122,9 +127,14 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2022-06-30T19:43:49.234Z",
-    "modified": "2022-06-30T19:43:49.289Z",
+    "modified": "2022-06-30T19:53:07.295Z",
     "headers": [],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"name\": \"Samba-canção do Homem-Aranha\"\n}",
+      "form": []
+    },
     "tests": []
   },
   {
@@ -146,11 +156,11 @@
     "colId": "history",
     "containerId": "",
     "name": "localhost:3000/products/4",
-    "url": "localhost:3000/products/4",
+    "url": "localhost:3000/products/3",
     "method": "DELETE",
     "sortNum": 0,
     "created": "2022-06-30T19:44:00.081Z",
-    "modified": "2022-06-30T19:44:00.128Z",
+    "modified": "2022-07-02T01:13:52.137Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -161,12 +171,112 @@
     "containerId": "",
     "name": "localhost:3000/products/",
     "url": "localhost:3000/products/",
-    "method": "GET",
+    "method": "POST",
     "sortNum": 0,
     "created": "2022-06-30T19:44:09.081Z",
-    "modified": "2022-06-30T19:44:09.130Z",
+    "modified": "2022-07-02T21:12:42.986Z",
     "headers": [],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"name\": \"Samba-canção do Homem-Aranha\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "6064e718-73fe-45a6-b114-869a8d87d6f8",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products/4",
+    "url": "localhost:3000/products/",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-06-30T19:52:22.506Z",
+    "modified": "2022-07-02T21:10:38.576Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"name\": \"Samba-canção do Homem-Aranha\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "21aa4ae7-d9e3-40e7-aa21-8b3bf40cd4c0",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products/item44",
+    "url": "localhost:3000/products/item44",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-06-30T19:53:16.436Z",
+    "modified": "2022-06-30T19:53:16.474Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"name\": \"Samba-canção do Homem-Aranha\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "d2f2de0d-b89b-4b64-b2b8-ef75d18d7397",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products/ioi",
+    "url": "localhost:3000/products/ioi",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-06-30T19:53:47.442Z",
+    "modified": "2022-06-30T19:53:47.471Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"name\": \"Samba-canção do Homem-Aranha\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "eb7e668d-4958-4a12-be55-ec7b4e15b4ca",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/samba",
+    "url": "localhost:3000/samba",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-06-30T19:54:00.331Z",
+    "modified": "2022-06-30T19:54:00.357Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"name\": \"Samba-canção do Homem-Aranha\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "728c9500-71e5-4318-82d6-aea65b660fe9",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/sales",
+    "url": "localhost:3000/sales",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-07-01T23:06:00.029Z",
+    "modified": "2022-07-02T23:09:08.826Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "[\n    {\n        \"productId\": 2,\n        \"quantity\": 1\n    },\n    {\n        \"productId\": 11,\n        \"quantity\": 2\n    },\n    {\n        \"productId\": 4,\n        \"quantity\": 10\n    }\n]\n",
+      "form": []
+    },
     "tests": []
   }
 ]

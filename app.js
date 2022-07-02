@@ -1,11 +1,13 @@
 const express = require('express');
 require('express-async-errors');
 const productRoute = require('./routes/productRoute');
+const saleRoute = require('./routes/saleRoute');
 
 const app = express();
 app.use(express.json());
 
 app.use('/products', productRoute);
+app.use('/sales', saleRoute);
 
 // não remova esse endpoint, é para o avaliador funcionar
 app.get('/', (_request, response) => {
@@ -15,7 +17,7 @@ app.get('/', (_request, response) => {
 app.use((err, _req, res, _next) => {
   const { name, message, type, code } = err;
   
-  if (type && type === 'string.min') {
+  if (type && type.substring(6) === '.min') {
     return res.status(422).json({ message });
   }
 

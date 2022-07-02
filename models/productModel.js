@@ -5,14 +5,14 @@ const productModel = {
   async exists(id) {
     const SQL = `SELECT * FROM StoreManager.products
       WHERE products.id = ?`;
-    const [[exists]] = await connection.execute(SQL, [id]);
+    const [[exists]] = await connection.query(SQL, [id]);
     return !!exists;
   },
 
   async existsProduct(data) {
     const SQL = `SELECT * FROM StoreManager.products
-      WHERE products.name = '${data.name}'`;
-    const [[exists]] = await connection.execute(SQL);
+      WHERE products.name = ?`;
+    const [[exists]] = await connection.query(SQL, [data.name]);
     return !!exists;
   },
 
@@ -20,37 +20,44 @@ const productModel = {
     const SQL = `DELETE FROM StoreManager.products
       WHERE id = ?;
     `;
-    await connection.execute(SQL, [id]);
+    await connection.query(SQL, [id]);
   },
 
   async create(data) {
     const SQL = `INSERT INTO StoreManager.products (name)
       VALUES (?);
     `;
-    const [{ insertId }] = await connection.execute(SQL, [data.name]);
+    const [{ insertId }] = await connection.query(SQL, [data.name]);
     return insertId;
   },
 
   async edit(id, changes) {
     console.log(changes);
-    // const SQL = 'UPDATE StoreManager.products SET ? WHERE id = ?;';
-    const SQL = `UPDATE StoreManager.products
-      SET ${Object.keys(changes)} = '${Object.values(changes)}'
-      WHERE id = ${id};`;
-    const [{ affectedRows }] = await connection.execute(SQL);
+    const SQL = 'UPDATE StoreManager.products SET ? WHERE id = ?;';
+    const [{ affectedRows }] = await connection.query(SQL, [changes, id]);
     return Boolean(affectedRows);
   },
 
   async getById(id) {
     const SQL = `SELECT * FROM StoreManager.products
       WHERE products.id = ?`;
-    const [[product]] = await connection.execute(SQL, [id]);
+    const [[product]] = await connection.query(SQL, [id]);
     return product;
    },
   
+  async listByArrayOfId(arrayOfId) {
+    const SQL = `
+      SELECT *
+      FROM StoreManager.products
+      WHERE id IN (?);`;
+
+    const [products] = await connection.query(SQL, [arrayOfId]);
+    return products;
+  },
+
   async list() {
     const SQL = 'SELECT * FROM StoreManager.products';
-    const [products] = await connection.execute(SQL);
+    const [products] = await connection.query(SQL);
     return products;
   },
 };

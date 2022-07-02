@@ -9,7 +9,7 @@ const productService = {
     id: Joi.number().required().positive().integer(),
   })),
 
-  validateBodyCreate: runSchema(Joi.object({
+  validateBody: runSchema(Joi.object({
     name: Joi.string().required().max(30).min(5),
   })),
 
@@ -23,6 +23,21 @@ const productService = {
     return true;
   },
 
+  async checkIfExistsByArrayOfId(arrayOfId) {
+    const products = await productModel.listByArrayOfId(arrayOfId);
+
+    if (!products.length) throw new NotFoundError('Product not found');
+
+    const listOfProductsId = products.map((product) => product.id);
+
+    for (let i = 0; i < arrayOfId.length; i += 1) {
+      if (!listOfProductsId.includes(arrayOfId[i])) {
+        // throw new NotFoundError(`productId:${arrayOfId[i]} not found`);
+        throw new NotFoundError('Product not found');
+      }
+    }
+  },
+  
   async checkIfExistsProduct(data) {
     const exists = await productModel.existsProduct(data);
     if (exists) {
