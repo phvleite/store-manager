@@ -3,9 +3,7 @@ const connection = require('./connection');
 const saleProductModel = {
 
   async bulkAddBySale(saleId, products) {
-    console.log(saleId, products);
     const map = products.map((product) => [saleId, product.productId, product.quantity]);
-    console.log(map);
 
     const SQL = `
     INSERT INTO StoreManager.sales_products
