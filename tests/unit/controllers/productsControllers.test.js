@@ -4,6 +4,7 @@ const { ValidationError } = require('joi');
 const chaiAsPromised = require('chai-as-promised');
 
 const productController = require('../../../controllers/productController');
+const productService = require('../../../services/productService');
 
 use(chaiAsPromised);
 
@@ -25,6 +26,23 @@ describe('ProductController', () => {
       expect(productController.getById(req, res)).to.be
         .rejectedWith(ValidationError);
     });
+
+    // it('ao mandar um id válido', async () => {
+    //   const req = {};
+    //   const res = {};
+
+    //   res.status = sinon.stub().returns(res);
+    //   res.json = sinon.stub();
+
+    //   req.params = { id: 1 };
+
+    //   sinon.stub(productService, 'getById').resolves(true);
+    //   const product = await productController.getById(req, res);
+
+    //   expect(res.status.calledWith(200)).to.be.equal(true);
+    //   expect(res.json.calledWith(product))
+    //     .to.be.equal({ id: 1, name: "Martelo de Thor"});
+    // });
   });
 
   describe('#create', () => {
