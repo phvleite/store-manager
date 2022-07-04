@@ -15,9 +15,10 @@ const saleModel = {
         s.date AS 'date',
         sp.product_id AS 'productId',
         sp.quantity AS 'quantity'
-        FROM sales AS s
-        INNER JOIN sales_products AS sp
-        WHERE s.id = ? AND s.id = sp.sale_id
+        FROM StoreManager.sales AS s
+        INNER JOIN StoreManager.sales_products AS sp
+        ON s.id = sp.sale_id
+        WHERE s.id = ?
         ORDER BY sp.sale_id, sp.product_id;
     `;
     const [sale] = await connection.query(SQL, [id]);
@@ -31,9 +32,9 @@ const saleModel = {
         s.date AS 'date',
         sp.product_id AS 'productId',
         sp.quantity AS 'quantity'
-        FROM sales AS s
-        INNER JOIN sales_products AS sp
-        WHERE s.id = sp.sale_id
+        FROM StoreManager.sales AS s
+        INNER JOIN StoreManager.sales_products AS sp
+        ON s.id = sp.sale_id
         ORDER BY sp.sale_id, sp.product_id;
     `;
     const [sales] = await connection.query(SQL);
