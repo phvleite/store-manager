@@ -268,12 +268,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-07-01T23:06:00.029Z",
-    "modified": "2022-07-03T01:27:29.532Z",
+    "modified": "2022-07-03T23:52:41.895Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "[\n    {\n        \"productId\": 2,\n        \"quantity\": 1\n    },\n    {\n        \"productId\": 1,\n        \"quantity\": 2\n    },\n    {\n        \"productId\": 3,\n        \"quantity\": 10\n    }\n]\n",
+      "raw": "[]",
       "form": []
     },
     "tests": []

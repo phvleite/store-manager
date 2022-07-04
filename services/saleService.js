@@ -10,7 +10,7 @@ const saleService = {
     id: Joi.number().required().positive().integer(),
   })),
 
-  validateBodyAdd: runSchema(Joi.array().required().items(Joi.object({
+  validateBodyAdd: runSchema(Joi.array().required().min(1).items(Joi.object({
     productId: Joi.number().required().positive().integer(),
     quantity: Joi.number().required().integer().min(1),
   }))),
