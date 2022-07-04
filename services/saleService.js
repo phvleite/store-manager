@@ -25,6 +25,11 @@ const saleService = {
     return true;
   },
 
+  async remove(saleId) {
+    await saleModel.remove(saleId);
+    await saleProductModel.remove(saleId);
+  },
+
   async getById(id) {
     const sale = await saleModel.getById(id);
     return sale;

@@ -4,7 +4,7 @@ const { ValidationError, object } = require('joi');
 const chaiAsPromised = require('chai-as-promised');
 
 const productController = require('../../../controllers/productController');
-// const productService = require('../../../services/productService');
+const productService = require('../../../services/productService');
 
 use(chaiAsPromised);
 
@@ -30,13 +30,14 @@ describe('ProductController', () => {
     // it('ao mandar um id válido', async () => {
     //   const req = {};
     //   const res = {};
+    //   const data = { id: 1, name: "Martelo de Thor" };
 
     //   res.status = sinon.stub().returns(res);
     //   res.json = sinon.stub();
 
     //   req.params = { id: 1 };
 
-    //   sinon.stub(productService, 'getById').resolves({ id: 1, name: "Martelo de Thor" });
+    //   sinon.stub(productService, 'getById').resolves(data);
     //   const product = await productController.getById(req, res);
 
     //   // expect(res.status.calledWith(200)).to.be.equal(true);

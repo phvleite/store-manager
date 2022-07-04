@@ -41,6 +41,13 @@ const saleModel = {
     return sales;
   },
 
+  async remove(id) {
+    const SQL = `DELETE FROM StoreManager.sales
+      WHERE id = ?;
+    `;
+    await connection.query(SQL, [id]);
+  },
+
   async add() {
     const SQL = `INSERT INTO StoreManager.sales (date)
       VALUES (NOW(3));

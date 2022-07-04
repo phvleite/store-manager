@@ -12,6 +12,13 @@ const saleProductModel = {
     `;
     await connection.query(SQL, [map]);
   },
+
+  async remove(saleId) {
+    const SQL = `DELETE FROM StoreManager.sales_products
+      WHERE sale_id = ?;
+    `;
+    await connection.query(SQL, [saleId]); 
+  },
 };
 
 module.exports = saleProductModel;
