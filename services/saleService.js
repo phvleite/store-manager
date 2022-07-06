@@ -25,9 +25,9 @@ const saleService = {
     return true;
   },
 
-  async remove(saleId) {
-    await saleModel.remove(saleId);
-    await saleProductModel.remove(saleId);
+  async remove(id) {
+    await saleModel.remove(id);
+    await saleProductModel.remove(id);
   },
 
   async getById(id) {
@@ -45,6 +45,15 @@ const saleService = {
     const sales = await saleModel.list();
     return sales;
   },
+
+  // async edit(id, changes) {
+  //   if (!Object.keys(changes).length) return false;
+
+  //   await changes
+  //     .forEach((change) => saleProductModel.edit(id, change.productId, change.quantity));
+  //   return true;
+  // },
+
 };
 
 module.exports = saleService;

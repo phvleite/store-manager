@@ -32,13 +32,18 @@
     "colId": "history",
     "containerId": "",
     "name": "localhost:3000/products",
-    "url": "localhost:3000/products",
-    "method": "GET",
+    "url": "localhost:3000/sales/2",
+    "method": "PUT",
     "sortNum": 0,
     "created": "2022-06-30T05:21:55.169Z",
-    "modified": "2022-07-01T23:03:55.630Z",
+    "modified": "2022-07-06T17:58:39.632Z",
     "headers": [],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "[\n    {\n        \"productId\": 3,\n        \"quantity\": 38\n    }\n]",
+      "form": []
+    },
     "tests": []
   },
   {
@@ -103,11 +108,11 @@
     "colId": "history",
     "containerId": "",
     "name": "localhost:3000/products/4",
-    "url": "localhost:3000/products/2",
+    "url": "localhost:3000/products/",
     "method": "GET",
     "sortNum": 0,
     "created": "2022-06-30T19:43:43.163Z",
-    "modified": "2022-07-04T18:41:01.360Z",
+    "modified": "2022-07-06T17:55:32.457Z",
     "headers": [],
     "params": [],
     "body": {
@@ -188,13 +193,19 @@
     "colId": "history",
     "containerId": "",
     "name": "localhost:3000/products/4",
-    "url": "localhost:3000/products/1",
+    "url": "localhost:3000/products/search?q=cudo",
     "method": "GET",
     "sortNum": 0,
     "created": "2022-06-30T19:52:22.506Z",
-    "modified": "2022-07-04T14:05:15.474Z",
+    "modified": "2022-07-06T21:08:04.865Z",
     "headers": [],
-    "params": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "cudo",
+        "isPath": false
+      }
+    ],
     "body": {
       "type": "json",
       "raw": "{\n    \"name\": \"Samba-canção do Homem-Aranha\"\n}",
@@ -264,16 +275,16 @@
     "colId": "history",
     "containerId": "",
     "name": "localhost:3000/sales",
-    "url": "localhost:3000/sales/",
+    "url": "localhost:3000/sales/3",
     "method": "GET",
     "sortNum": 0,
     "created": "2022-07-01T23:06:00.029Z",
-    "modified": "2022-07-04T21:57:04.112Z",
+    "modified": "2022-07-06T20:23:40.314Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "[\n    {\n        \"productId\": 2,\n        \"quantity\": 10\n    },\n   {\n        \"productId\": 1,\n        \"quantity\": 100\n    },\n    {\n        \"productId\": 3,\n        \"quantity\": 5\n    }\n]",
+      "raw": "[\n  {\n    \"productId\": 1,\n    \"quantity\": 15\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 20\n  },\n  {\n    \"productId\": 3,\n    \"quantity\": 35\n  }\n]",
       "form": []
     },
     "tests": []
@@ -283,13 +294,18 @@
     "colId": "history",
     "containerId": "",
     "name": "localhost:3000/sales",
-    "url": "localhost:3000/sales/",
+    "url": "localhost:3000/sales/2",
     "method": "GET",
     "sortNum": 0,
     "created": "2022-07-03T01:26:51.486Z",
-    "modified": "2022-07-04T18:24:40.923Z",
+    "modified": "2022-07-06T20:19:50.561Z",
     "headers": [],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "[\n    {\n        \"productId\": 3,\n        \"quantity\": 85\n    }\n]",
+      "form": []
+    },
     "tests": []
   }
 ]

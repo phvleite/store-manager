@@ -8,7 +8,13 @@ const productController = {
     const product = await productService.getById(id);
     res.status(200).json(product);
   },
-  
+
+  async getBySearch(req, res) {
+    const { q } = req.query;
+    const products = await productService.getBySearch(q);
+    res.status(200).json(products);
+  },
+
   async remove(req, res) {
     const { id } = await productService.validateParamsId(req.params);
     await productService.checkIfExists(id);

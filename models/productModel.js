@@ -16,6 +16,13 @@ const productModel = {
     return !!exists;
   },
 
+  async getBySearch(q) {
+    const SQL = `SELECT * FROM StoreManager.products
+      WHERE products.name LIKE '%${q}%'`;
+    const [products] = await connection.query(SQL);
+    return products;
+  },
+
   async remove(id) {
     const SQL = `DELETE FROM StoreManager.products
       WHERE id = ?;

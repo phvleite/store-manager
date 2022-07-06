@@ -70,6 +70,11 @@ const productService = {
     return product;
   },
 
+  async getBySearch(q) {
+    const products = await productModel.getBySearch(q);
+    return products;
+  },
+
   async list() {
     const products = await productModel.list();
     return products;

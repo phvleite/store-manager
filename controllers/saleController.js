@@ -29,6 +29,16 @@ const saleController = {
     saleService.remove(id);
     res.sendStatus(204);
   },
+
+  async edit(req, res) {
+    const { id } = await saleService.validateParamsId(req.params);
+    const changes = await saleService.validateBodyAdd(req.body);
+    await saleService.checkIfExists(id);
+    const products = changes.map((product) => product.productId);
+    await productService.checkIfExistsByArrayOfId(products);
+    await saleService.edit(id, changes);
+    res.status(200).json({ id, ItemsUpdated: changes });
+  },
 };
 
 module.exports = saleController;
