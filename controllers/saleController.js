@@ -37,7 +37,8 @@ const saleController = {
     const products = changes.map((product) => product.productId);
     await productService.checkIfExistsByArrayOfId(products);
     await saleService.edit(id, changes);
-    res.status(200).json({ id, ItemsUpdated: changes });
+    console.log(changes);
+    res.status(200).json({ saleId: id, itemsUpdated: changes });
   },
 };
 

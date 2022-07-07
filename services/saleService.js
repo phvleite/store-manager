@@ -46,14 +46,15 @@ const saleService = {
     return sales;
   },
 
-  // async edit(id, changes) {
-  //   if (!Object.keys(changes).length) return false;
+  async edit(id, changes) {
+    if (!Object.keys(changes).length) return false;
 
-  //   await changes
-  //     .forEach((change) => saleProductModel.edit(id, change.productId, change.quantity));
-  //   return true;
-  // },
-
+    await Promise.all(changes
+      .map((change) => {
+        const { productId, quantity } = change;
+        return saleProductModel.edit(id, quantity, productId);
+      }));
+  },
 };
 
 module.exports = saleService;
