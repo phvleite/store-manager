@@ -50,7 +50,7 @@ const productModel = {
       WHERE products.id = ?`;
     const [[product]] = await connection.query(SQL, [id]);
     return product;
-   },
+  },
   
   async listByArrayOfId(arrayOfId) {
     const SQL = `
