@@ -52,4 +52,76 @@ describe('ProductService', () => {
         .rejectedWith(NotFoundError);
     });
   });
+
+  describe('#list', () => {
+    it('deve disparar um erro caso productModel.list dispare um erro', () => {
+      sinon.stub(productModel, 'list').rejects();
+      expect(productService.list()).to.eventually.be.rejected;
+    });
+
+    it('deve retornar uma lista caso productModel.list retorne uma', () => {
+      sinon.stub(productModel, 'list').resolves([]);
+      expect(productService.list()).to.eventually.deep.equal([]);
+    });
+  });
+
+  describe('#create', () => {
+    it('deve disparar um erro caso productModel.creat dispare um erro', () => {
+      sinon.stub(productModel, 'create').rejects();
+      expect(productService.create()).to.eventually.be.rejected;
+    });
+
+    it('deve retornar um id caso productModel.creat retorne um', () => {
+      sinon.stub(productModel, 'create').resolves(1);
+      expect(productService.create({})).to.eventually.equal(1);
+    });
+  });
+
+  describe('#remove', () => {
+    it('deve disparar um erro caso productModel.remove dispare um erro', () => {
+      sinon.stub(productModel, 'remove').rejects();
+      expect(productService.remove(1)).to.eventually.be.rejected;
+    });
+
+    it('deve retornar caso productModel.remove remova o produto', () => {
+      sinon.stub(productModel, 'remove').resolves();
+      expect(productService.remove(1)).to.eventually.be.undefined;
+    });
+  });
+
+  describe('#edit', () => {
+    it('deve disparar um erro caso productModel.edit dispare um erro', () => {
+      sinon.stub(productModel, 'edit').rejects();
+      expect(productService.edit(1)).to.eventually.be.rejected;
+    });
+
+    it('deve retornar caso productModel.edit altere o produto', () => {
+      sinon.stub(productModel, 'edit').resolves();
+      expect(productService.edit(1)).to.eventually.be.undefined;
+    });
+  });
+
+  describe('#getById', () => {
+    it('deve disparar um erro caso productModel.getById dispare um erro', () => {
+      sinon.stub(productModel, 'getById').rejects();
+      expect(productService.getById(1)).to.eventually.be.rejected;
+    });
+
+    it('deve retornar um objeto caso productModel.getById retorn', () => {
+      sinon.stub(productModel, 'getById').resolves({});
+      expect(productService.getById(1)).to.eventually.deep.equal({});
+    });
+  });
+
+  describe('#getBySearch', () => {
+    it('deve disparar um erro caso productModel.getBySearch dispare um erro', () => {
+      sinon.stub(productModel, 'getBySearch').rejects();
+      expect(productService.getBySearch(1)).to.eventually.be.rejected;
+    });
+
+    it('deve retornar uma lista de objetos caso productModel.getBySearch retorn', () => {
+      sinon.stub(productModel, 'getBySearch').resolves({});
+      expect(productService.getBySearch(1)).to.eventually.deep.equal([{}]);
+    });
+  });
 });

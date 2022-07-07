@@ -108,13 +108,19 @@
     "colId": "history",
     "containerId": "",
     "name": "localhost:3000/products/4",
-    "url": "localhost:3000/products/4",
+    "url": "localhost:3000/products/search?q=d",
     "method": "GET",
     "sortNum": 0,
     "created": "2022-06-30T19:43:43.163Z",
-    "modified": "2022-07-07T00:30:37.130Z",
+    "modified": "2022-07-07T13:06:09.815Z",
     "headers": [],
-    "params": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "d",
+        "isPath": false
+      }
+    ],
     "body": {
       "type": "json",
       "raw": "{\n    \"name\": \"Cueca do Homem-Aranha\"\n}",
